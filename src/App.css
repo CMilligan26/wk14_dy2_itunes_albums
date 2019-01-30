@@ -1,32 +1,87 @@
+html {
+  background-size: cover;
+  background-image: repeating-radial-gradient(skyblue,white);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.Album-Search{
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Album-List{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Album-List-Title{
+  text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
+.Album-Item{
+  background-image: linear-gradient(rgba(128, 0, 128, 0.3), rgba(255, 192, 203, 0.3));
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  display: block;
+  align-content: center;
+}
+
+.Album-Title{
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: inherit;
+}
+
+.Album-Art{
+  height: 120px;
+  width: 120px;
+  animation: album-spin 2s linear infinite;
+  margin-bottom: 50px;
+  /* border-style: solid;
+  border-width: 2px;
+  border-color: black; */
+  position: relative;
+}
+.Album-Art-2{
+  height: 120px;
+  width: 120px;
+  animation: album-spin-rev 2s linear infinite;
+  margin-bottom: 50px;
+  /* border-style: solid;
+  border-width: 2px;
+  border-color: black; */
+  position: relative;
+}
+
+.Album-Preview{
+  margin: 0px 20px 50px 20px;
+}
+
+@keyframes album-spin{
   from {
-    transform: rotate(0deg);
+    transform: scale3d(1,1,1);
+    left: 64px;
   }
   to {
-    transform: rotate(360deg);
+    transform: scale3d(0,1,1);
+    left: 6px;
+    filter: brightness(50%);
+  }
+}
+
+@keyframes album-spin-rev{
+  from {
+    transform: scale3d(0,1,1);
+    right: 0px;
+    filter: brightness(50%);
+  }
+  to {
+    transform: scale3d(1,1,1);
+    right: 56px;
   }
 }
